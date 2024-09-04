@@ -8,11 +8,10 @@ $rilis = $_POST['rilis'];
 $skor = $_POST['skor'];
 $sinopsis = $_POST['sinopsis'];
 $serial = $_POST['serial'];
-$genre = $_POST['genre'];
 
 // Query untuk mengupdate data
 $stmt = $mysqli->prepare("UPDATE movie SET judul = ?, rilis = ?, skor = ?, sinopsis = ?, serial = ?, genre = ? WHERE idmovie = ?");
-$stmt->bind_param('ssdsisi', $judul, $rilis, $skor, $sinopsis, $serial, $genre, $idmovie);
+$stmt->bind_param('ssdsii', $judul, $rilis, $skor, $sinopsis, $serial, $idmovie);
 
 /* Menjalankan prepared statement */
 $stmt->execute();

@@ -6,12 +6,12 @@ $judul = $_POST['judul'];
 $rilis = $_POST['rilis'];
 $skor = $_POST['skor'];
 $sinopsis = $_POST['sinopsis'];
-$serial = $_POST['serial'];
-$genre = $_POST['genre'];
+// $serial = $_POST['serial'];
+// $genre = $_POST['genre'];
 
 // Query untuk memasukkan data ke tabel movie
-$stmt = $mysqli->prepare("INSERT INTO movie (judul, rilis, skor, sinopsis, serial, genre) 	VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param('ssdsis', $judul, $rilis, $skor, $sinopsis, $serial, $genre);
+$stmt = $mysqli->prepare("INSERT INTO movie (judul, rilis, skor, sinopsis, serial ) 	VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param('ssdsi', $judul, $rilis, $skor, $sinopsis, $serial);
 // ‘'ssdsis'’ is the variable type 
 
 /* execute prepared statement */
